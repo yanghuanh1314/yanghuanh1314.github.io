@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="python之程序的控制结构, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>python之程序的控制结构 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">python之程序的控制结构</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">python基础</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -450,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-11
+                    2021-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -484,19 +497,214 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <p><strong>python之程序的控制结构</strong></p>
+<span id="more"></span>
+<p>本文将会从两个大方向出发</p>
+<ul>
+<li>程序的分支结构</li>
+<li>程序的循环结构</li>
+</ul>
+<p> 第一部分<br>程序的分支结构<br>1，单分支结构</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>如果添加成立，则执行语句块，否则不执行语句块。<br><img src="https://img-blog.csdnimg.cn/20200526185406592.png" alt="单分支流程图"><br>很简单！<br>2，二分支结构</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">1</span><span class="token operator">></span>
+<span class="token keyword">else</span>：
+    <span class="token operator">&lt;</span>语句块<span class="token number">2</span><span class="token operator">></span>
+</code></pre>
+<p>如果条件为真，执行语句块1；为假，执行语句块2。<br><img src="https://img-blog.csdnimg.cn/20200527191236601.png" alt="在这里插入图片描述"><br>二分支结构还有一种表现形式：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&lt;</span>表达式<span class="token number">1</span><span class="token operator">></span> <span class="token keyword">if</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span> <span class="token keyword">else</span> <span class="token operator">&lt;</span>表达式<span class="token number">2</span><span class="token operator">></span>
+</code></pre>
+<p>3，多分支结构<br>当然了，一个程序中不可能只有两个条件，所以。。。。。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> <span class="token operator">&lt;</span>条件<span class="token number">1</span><span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">1</span><span class="token operator">></span>
+<span class="token keyword">elif</span><span class="token operator">&lt;</span>条件<span class="token number">2</span><span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">2</span><span class="token operator">></span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">else</span>：
+    <span class="token operator">&lt;</span>语句块N<span class="token operator">></span>
+</code></pre>
+<p>emmm，该怎么说呢？看见了省略号就是有很多条件，不妨看下流程图<br><img src="https://img-blog.csdnimg.cn/20200527195543572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>4，条件判断及组合<br><img src="https://img-blog.csdnimg.cn/20200527202146808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="---"><img src="https://img-blog.csdnimg.cn/20200527203301204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>看见红字了吗？怎么解释，不有时候也有点蒙。<br>and：我就得是两个条件必须满足，而or;：两个条件满足一个就好。<br>and：<br><img src="https://img-blog.csdnimg.cn/20200527205105190.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020052720465227.png" alt="9"><br>or：两个条件满足一个。<br>学编程，实验出真理，<br>5，异常处理</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#第一种使用方法</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">1</span><span class="token operator">></span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">2</span><span class="token operator">></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<span class="token comment" spellcheck="true">#第二种使用方法</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">1</span><span class="token operator">></span>
+<span class="token keyword">except</span><span class="token operator">&lt;</span>异常类型<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token number">2</span><span class="token operator">></span>
+</code></pre>
+<p>其实一开始我很懵，我认为可以自动解决bug，错了，有些bug还要自己动手，<br>这个个人感觉和二分支语句一样，语句块1输入bug，语句块2输入解决方式</p>
+<p>接下来进入第二部分<br>一个闪现，欢迎来到第二部分，知识还有5秒到达眼前<br>1，遍历循环<br>许许多多的东西多可以背循环，因此这一个知识点包含了很多知识，但是掌握一个人，其他的迎刃而解，<br>（1）遍历某个结构形成的循环`</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> <span class="token operator">&lt;</span>循环遍量<span class="token operator">></span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>遍历结构<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>怎么解释呢，，，遍历结构可以说元祖、字典·····从遍历结构中提取元素，放进遍量，语句块执行 </p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">,</span><span class="token string">"e"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我是"</span><span class="token operator">+</span>i<span class="token punctuation">)</span>
+我是a
+我是b
+我是c
+我是d
+我是e
+</code></pre>
+<p>（2）计数循环</p>
+<pre class=" language-python"><code class="language-python">foe i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>range()函数产生数字序列，产生循环</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+hello <span class="token number">0</span>
+hello <span class="token number">1</span>
+hello <span class="token number">2</span>
+hello <span class="token number">3</span>
+hello <span class="token number">4</span>
+</code></pre>
+<p>从0开始，5次循环<br>还有！！！<br>计数循环（特定次）</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token punctuation">,</span>M<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token punctuation">,</span>M<span class="token punctuation">,</span>K<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+hello <span class="token number">1</span>
+hello <span class="token number">2</span>
+hello <span class="token number">3</span>
+hello <span class="token number">4</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+hello <span class="token number">1</span>
+hello <span class="token number">3</span> 
+</code></pre>
+<p>emmm，其实这类就是个区间，和字符串索引一样。<br>（3）字符串循环</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>s是字符串，循环</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> c <span class="token keyword">in</span> <span class="token string">"人生苦短，我学python"</span><span class="token punctuation">:</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+ 人
+生
+苦
+短
+，
+我
+学
+p
+y
+t
+h
+o
+n
+</code></pre>
+<p>（4）列表循环</p>
+<pre class=" language-python"><code class="language-python">foe list <span class="token keyword">in</span> Is<span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> list <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">,</span><span class="token string">"py"</span><span class="token punctuation">,</span><span class="token number">456</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+<span class="token number">123</span>
+py
+<span class="token number">456</span> 
+</code></pre>
+<p>（5）文件循环</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> line <span class="token keyword">in</span> fi<span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>文件里面的内容逐一打出</p>
+<p>遍历循环告一段落了，聊了这么说，都一样，<br>2，无限循环<br>直接说代码</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">while</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span><span class="token punctuation">:</span>
+    <span class="token operator">&lt;</span>语句块<span class="token operator">></span>
+</code></pre>
+<p>条件为真，循环一直执行，Ctrl+C强制结束循环，</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>a <span class="token operator">==</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">while</span> a <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> a <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token number">2</span>
+<span class="token number">1</span>
+<span class="token number">0</span>
+<span class="token operator">>></span><span class="token operator">></span>a <span class="token operator">==</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">while</span> a <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+```Ctrl<span class="token operator">+</span>C 退出执行
+</code></pre>
+<p>就是这点事<br>3，循环控制保留字<br>介绍两位新朋友：break和continue<br>定义是这么描述的<br>break：跳出并结束当前整个循环，并 执行循环后的语句。<br>continue：结束当次循环，继续执行后续次数循环。<br>可以搭配for和whlie使用<br>说句心里话，我不喜欢阅读概念，因为，，，我看不懂，上代码、</p>
+<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">while</span> a <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+</code></pre>
+<p>还记得这段代码吗？这是个死循环，可以一直执行。稍作修改</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#break</span>
+<span class="token operator">>></span><span class="token operator">></span>a <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">while</span> a <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+       a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+       <span class="token keyword">if</span> a <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">:</span>
+           <span class="token keyword">break</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+<span class="token number">6</span>
+<span class="token number">7</span>
+<span class="token number">8</span>
+<span class="token number">9</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<span class="token comment" spellcheck="true">#continue</span>
+<span class="token operator">>></span><span class="token operator">></span>a <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">while</span> a <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+       a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span>
+       <span class="token keyword">if</span> a <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">:</span>
+           <span class="token keyword">continue</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<span class="token number">5</span>
+<span class="token number">6</span>
+<span class="token number">7</span>
+<span class="token number">8</span>
+<span class="token number">9</span>
+<span class="token number">11</span>
+<span class="token number">12</span>
+<span class="token number">13</span>
+```Ctrl<span class="token operator">+</span>C
+</code></pre>
+<p>10呢？虽然不喜欢看概念，但是理论知识不能忘！对比一下，<br>break结束循环，continue结束当次想循环，继续下一次。<br>如果有多个循环内容？break仅跳出当前最内层循环。但是我举不出栗子<br>4，循环的高级用法<br>最后一关<br>就是说循环与else保留字的搭配。当循环执行时没有遇到break是执行else语句</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#continue</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> c <span class="token keyword">in</span> <span class="token string">"python"</span><span class="token punctuation">:</span>
+       <span class="token keyword">if</span> c <span class="token operator">==</span>  <span class="token string">"t"</span><span class="token punctuation">:</span>
+           <span class="token keyword">continue</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+   <span class="token keyword">else</span><span class="token punctuation">:</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正常退出"</span><span class="token punctuation">)</span>
+p
+y
+h
+o
+n
+正常退出
+
+<span class="token comment" spellcheck="true">#break</span>
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">for</span> c <span class="token keyword">in</span> <span class="token string">"python"</span><span class="token punctuation">:</span>
+       <span class="token keyword">if</span> c <span class="token operator">==</span>  <span class="token string">"t"</span><span class="token punctuation">:</span>
+           <span class="token keyword">break</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+   <span class="token keyword">else</span><span class="token punctuation">:</span>
+       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正常退出"</span><span class="token punctuation">)</span>
+p
+y
+</code></pre>
+<p>好了，就这样结束了，<br>感谢观看，我在自学python，正在为二级计算机复习python，不对的请指出，如果您也在自学。加油！</p>
 
                 
             </div>
@@ -523,7 +731,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/05/11/hello-world/">http://example.com/2021/05/11/hello-world/</a>
+                    <a href="http://example.com/2021/05/11/python%E4%B9%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/">http://example.com/2021/05/11/python%E4%B9%8B%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,7 +768,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">python基础</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -734,19 +946,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/11/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%93%8D%E4%BD%9C/">
+                <a href="/2021/05/11/python%E4%B9%8B%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%94%A8%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python基础语法之字符串类型及操作">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python之函数和代码复用笔记">
                         
-                        <span class="card-title">Python基础语法之字符串类型及操作</span>
+                        <span class="card-title">python之函数和代码复用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python基础语法之字符串类型及操作
+                            python之函数和代码复用笔记
                         
                     </div>
                     <div class="publish-info">
@@ -783,32 +995,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/20/Markdown%E6%96%87%E6%A1%A3%E7%BC%96%E5%86%99%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/05/11/python%E4%B9%8Bturtle%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Markdown文档编写学习笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python之turtle库的使用笔记">
                         
-                        <span class="card-title">Markdown文档编写学习笔记</span>
+                        <span class="card-title">python之turtle库的使用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            python之turtle库的使用笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
+                    </a>
+                    
                 </div>
                 
             </div>
