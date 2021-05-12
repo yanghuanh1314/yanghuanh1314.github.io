@@ -498,7 +498,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    756
+                    757
                 </div>
                 
 
@@ -528,6 +528,7 @@
                 <p><strong>Python学习笔记整理及感想</strong></p>
 <span id="more"></span>
 
+<p>@[TOC]</p>
 <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><p>时隔两年，学学停停，停停学学，Python的基础入门 总算是学完了。也写了许多学习笔记，放在计算机专业的角度，这只是冰山一角，而对于我来说算是一个真正的入门。</p>
 <h1 id="2-接触Python"><a href="#2-接触Python" class="headerlink" title="2,接触Python"></a>2,接触Python</h1><p>我有时候想Java、c、php····那么多语言，我为什么一开始学习Python。19年，了解到了爬虫技术。之后就是去网上找爬虫是什么，怎么学。在百度的过程中发现了写爬虫最优秀的语言是Python。爬虫是Python的一个进阶，进阶的话我想应该要有一定的基础。要不然就是听了天书。之后也有很多人提起Python，语法简单、适合小白学习之类的话。于是就上了车，去学习了Python的基础部分。第一遍学习，就是说赶紧入门，学习爬虫。疫情之前学完了，但是赶紧并没有记下什么，买了一本书、有一个笔记本，就算是我学过吧？慢慢的发现Python还有二级考试，由于升学需要，我又学习了第二遍。同时接触了博客，因此就有博客的方式记忆了下来。</p>
 <h1 id="3-我的学习路线"><a href="#3-我的学习路线" class="headerlink" title="3,我的学习路线"></a>3,我的学习路线</h1><p>以下是基础部分学习，</p>
@@ -931,7 +932,7 @@
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -943,7 +944,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
