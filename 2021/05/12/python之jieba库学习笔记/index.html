@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客, huan&#34;Notebook">
+    <meta name="keywords" content="python之jieba库的使用笔记, huan&#34;Notebook">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客 | huan&#34;Notebook</title>
+    <title>python之jieba库的使用笔记 | huan&#34;Notebook</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客</h1>
+                    <h1 class="description center-align post-title">python之jieba库的使用笔记</h1>
                 </div>
             </div>
         </div>
@@ -431,14 +431,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                <span class="chip bg-color">随笔</span>
+                            <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python模块</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,21 +456,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-05-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-03
+                    2021-05-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29
+                    537
                 </div>
                 
 
@@ -488,9 +497,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><span id="more"></span>
-<p>Hello World！<br>路漫漫其修远兮，吾将上下而求索。<br>热爱、执着、探索······</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1293886117&auto=0&height=66"></iframe>
+                <p><strong>pythonjieba库的使用笔记</strong></p>
+<span id="more"></span>
+
+<p>@<a href="%E7%AC%94%E8%AE%B0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="一，-前言"><a href="#一，-前言" class="headerlink" title="一， 前言"></a>一， 前言</h1><p>这是一个解决中文问题的库，处理中文信息。将句子分成词语。处理中文字符。    一起康康吧！</p>
+<h1 id="二，jieba库的基本介绍"><a href="#二，jieba库的基本介绍" class="headerlink" title="二，jieba库的基本介绍"></a>二，jieba库的基本介绍</h1><h2 id="1，jieba库概述"><a href="#1，jieba库概述" class="headerlink" title="1，jieba库概述"></a>1，jieba库概述</h2><p>jieba库是优秀的中文分词第三方库</p>
+<p>中文文本需要通过分词获得单个的词语<br>既然是第三方库，需要额外安装<br>只需要了解其中一个函数就OK</p>
+<h2 id="2，jieba库的安装"><a href="#2，jieba库的安装" class="headerlink" title="2，jieba库的安装"></a>2，jieba库的安装</h2><pre class=" language-python"><code class="language-python">pip install jieba
+</code></pre>
+<h2 id="3，jieba库的分词原理"><a href="#3，jieba库的分词原理" class="headerlink" title="3，jieba库的分词原理"></a>3，jieba库的分词原理</h2><p>jieba分词依靠中文词库<br>利用一个中文词库，确定中文字符之间的关联概率<br>中文字符间概率大的组成词组，形成分词结果<br>除了分词，用户还可以添加自定义词组</p>
+<h1 id="三，jieba库的使用说明"><a href="#三，jieba库的使用说明" class="headerlink" title="三，jieba库的使用说明"></a>三，jieba库的使用说明</h1><h2 id="1，jieba库分词的三种模式"><a href="#1，jieba库分词的三种模式" class="headerlink" title="1，jieba库分词的三种模式"></a>1，jieba库分词的三种模式</h2><p>精确模式：把文本精确的切分开，不存在冗余单词<br>全模式：把文本中可能出现的单词都扫描出来，有冗余<br>搜索引擎模式：在精确模式基础上，对长词再次切分</p>
+<h2 id="2，jieba库的使用函数"><a href="#2，jieba库的使用函数" class="headerlink" title="2，jieba库的使用函数"></a>2，jieba库的使用函数</h2><p>1，jieba.lcut(s)<br>精确模式，返回一个列表类型的分词结果</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>jieba<span class="token punctuation">.</span>lcut<span class="token punctuation">(</span><span class="token string">"中国的疫情一定会过去"</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'中国'</span><span class="token punctuation">,</span> <span class="token string">'的'</span><span class="token punctuation">,</span> <span class="token string">'疫情'</span><span class="token punctuation">,</span> <span class="token string">'一定'</span><span class="token punctuation">,</span> <span class="token string">'会'</span><span class="token punctuation">,</span> <span class="token string">'过去'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>这是个列表类型[],</p>
+<p>2，jieba.lcut(s,cut_all=True)<br>全模式，返回一个列表类型的分词结果，有冗余</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>jieba<span class="token punctuation">.</span>lcut<span class="token punctuation">(</span><span class="token string">"中国的疫情一定会过去"</span><span class="token punctuation">,</span>cut_all<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'中国'</span><span class="token punctuation">,</span> <span class="token string">'的'</span><span class="token punctuation">,</span> <span class="token string">'疫情'</span><span class="token punctuation">,</span> <span class="token string">'一定'</span><span class="token punctuation">,</span> <span class="token string">'定会'</span><span class="token punctuation">,</span> <span class="token string">'过去'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>看上去有多余的字词</p>
+<p>3，jieba.lcut_for_search(s)<br>搜索引擎模式，返回一个 列表类型的分词结果，有冗余</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>jieba<span class="token punctuation">.</span>lcut_for_search<span class="token punctuation">(</span><span class="token string">"中华人民共和国是伟大的"</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'中华'</span><span class="token punctuation">,</span> <span class="token string">'华人'</span><span class="token punctuation">,</span> <span class="token string">'人民'</span><span class="token punctuation">,</span> <span class="token string">'共和'</span><span class="token punctuation">,</span> <span class="token string">'共和国'</span><span class="token punctuation">,</span> <span class="token string">'中华人民共和国'</span><span class="token punctuation">,</span> <span class="token string">'是'</span><span class="token punctuation">,</span> <span class="token string">'伟大'</span><span class="token punctuation">,</span> <span class="token string">'的'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>4，jieba.add_word(w)<br>向分词字典增加新词w</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>jieba<span class="token punctuation">.</span>add_word<span class="token punctuation">(</span><span class="token string">"蟒蛇语言"</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="四，总结"><a href="#四，总结" class="headerlink" title="四，总结"></a>四，总结</h1><p>看到这里，就结束了。<br>百度了一下，jieba库用于分析文档比较方便，分析文档中出现最多的词汇，文档的大概内容。<br>如果这篇文章帮到你了，我很荣幸。</p>
+<p>哈哈哈嗝</p>
+
                 
             </div>
             <hr/>
@@ -516,7 +553,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/02/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">http://example.com/2021/02/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
+                    <a href="http://example.com/2021/05/12/python%E4%B9%8Bjieba%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2021/05/12/python%E4%B9%8Bjieba%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +591,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                    <span class="chip bg-color">随笔</span>
+                                <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python模块</span>
                                 </a>
                             
                         </div>
@@ -727,65 +764,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/17/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/05/12/python%E4%B9%8Bjieba%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo博客搭建学习笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python之jieba库的使用笔记">
                         
-                        <span class="card-title">hexo博客搭建学习笔记</span>
+                        <span class="card-title">python之jieba库的使用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            欢者本欢
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/01/31/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%B9%8B%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%93%8D%E4%BD%9C%E7%AF%87/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python基础语法之数字类型及操作篇">
-                        
-                        <span class="card-title">Python基础语法之数字类型及操作篇</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Python基础语法之数字类型及操作篇
+                            pythonjieba库的使用笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
@@ -799,13 +800,50 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">python基础</span>
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05/11/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E5%8F%8A%E6%84%9F%E6%83%B3/">
+                    <div class="card-image">
+                        
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="Python学习笔记整理及感想">
+                        
+                        <span class="card-title">Python学习笔记整理及感想</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python学习笔记整理及感想
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            欢者本欢
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
