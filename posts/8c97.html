@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python学习笔记整理及感想, huan&#39;s Notebook">
+    <meta name="keywords" content="python之turtle库的使用笔记, huan&#39;s Notebook">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python学习笔记整理及感想 | huan&#39;s Notebook</title>
+    <title>python之turtle库的使用笔记 | huan&#39;s Notebook</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -338,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python学习笔记整理及感想</h1>
+                    <h1 class="description center-align post-title">python之turtle库的使用笔记</h1>
                 </div>
             </div>
         </div>
@@ -459,8 +459,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">总结</span>
+                            <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">python模块</span>
                             </a>
                         
                     </div>
@@ -498,14 +498,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    756
+                    619
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -525,28 +525,171 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>Python学习笔记整理及感想</strong></p>
+                <p><strong>python之turtle库的使用笔记</strong></p>
 <span id="more"></span>
+<ol>
+<li><p>turtle库介绍<br>图形绘制函数库，标准库；turtle（海龟）。<br>问题1:什么是标准库？<br>答：标准库就是python内部库，不需要安装直接导入即可使用。<br>问题2：这个库有什么用？<br>答：这是最简单的图形绘制库，你可以绘制自己喜欢的卡通人物。当然你也可以绘制一朵玫瑰花，送回给你的女朋友，体验用python表白之美。</p>
+</li>
+<li><p>库导入</p>
+</li>
+</ol>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> turtle
+</code></pre>
+<p>这是一句固定语句，适用于各种库导入</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> <span class="token operator">&lt;</span>库名<span class="token operator">></span>
+</code></pre>
+<ol start="3">
+<li>新知识<br>1，生成一个人窗体</li>
+</ol>
+<pre class=" language-python"><code class="language-python">turtle<span class="token punctuation">.</span>setup<span class="token punctuation">(</span>width<span class="token punctuation">,</span>beight<span class="token punctuation">,</span>startx<span class="token punctuation">,</span>starty<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#生成一个窗体以widthw为宽，beight为长；（startx,starty）窗体起始位置。电脑屏幕左上角为(0,0)可以省略</span>
+</code></pre>
+<p>2，画笔控制</p>
+<pre class=" language-python"><code class="language-python">turtle<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#penup()画笔抬起</span>
+turtle<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#penomn()放下画笔</span>
+</code></pre>
+<p>这两个函数要一起使用`</p>
+<pre class=" language-python"><code class="language-python">turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#fd()前行。当输入值为负数时后退</span>
 
-<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><p>时隔两年，学学停停，停停学学，Python的基础入门 总算是学完了。也写了许多学习笔记，放在计算机专业的角度，这只是冰山一角，而对于我来说算是一个真正的入门。</p>
-<h1 id="2-接触Python"><a href="#2-接触Python" class="headerlink" title="2,接触Python"></a>2,接触Python</h1><p>我有时候想Java、c、php····那么多语言，我为什么一开始学习Python。19年，了解到了爬虫技术。之后就是去网上找爬虫是什么，怎么学。在百度的过程中发现了写爬虫最优秀的语言是Python。爬虫是Python的一个进阶，进阶的话我想应该要有一定的基础。要不然就是听了天书。之后也有很多人提起Python，语法简单、适合小白学习之类的话。于是就上了车，去学习了Python的基础部分。第一遍学习，就是说赶紧入门，学习爬虫。疫情之前学完了，但是赶紧并没有记下什么，买了一本书、有一个笔记本，就算是我学过吧？慢慢的发现Python还有二级考试，由于升学需要，我又学习了第二遍。同时接触了博客，因此就有博客的方式记忆了下来。</p>
-<h1 id="3-我的学习路线"><a href="#3-我的学习路线" class="headerlink" title="3,我的学习路线"></a>3,我的学习路线</h1><p>以下是基础部分学习，</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/104454724?spm=1001.2014.3001.5502">Python基础语法之数字类型及操作篇</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/104479550?spm=1001.2014.3001.5502">Python基础语法之字符串类型及操作</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/105773234?spm=1001.2014.3001.5502">python之turtle库的使用笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106337996?spm=1001.2014.3001.5502">Python之程序控制结构</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106528697?spm=1001.2014.3001.5502">python之random学习笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106601968?spm=1001.2014.3001.5502">python之函数和代码复用笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106782203?spm=1001.2014.3001.5502">python之pyinstaller库学习学习笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106782448?spm=1001.2014.3001.5502">python之jieba库学习笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/106781617?spm=1001.2014.3001.5502">python之组合数据类型学习笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/116453938?spm=1001.2014.3001.5502">Python之文件和数据格式化学习笔记</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45348840/article/details/116592829?spm=1001.2014.3001.5502">python之Wordcloud库学习笔记</a></p>
-<p>从以上内容可以看出我的学习顺序：数字类型、字符串、程序结构等等，在此期间我还学习过Java、C。我把他们进行对比，看过更多文章。语言虽然不同，但是基本相似，int、str、集合等等都是有的。只不过语法不用</p>
-<p>期间敲老师给出的代码 ,同时也有几个创新，基本都是非常简单的实例。</p>
-<h1 id="4-学习历程"><a href="#4-学习历程" class="headerlink" title="4,学习历程"></a>4,学习历程</h1><p>万事开头难，一开始，看视频，写代码，找bug。一有bug，找大佬解答。从入门到放弃。慢慢着，这些bug无非就是少字落字，自己找。百度。然后是继续学习。疫情期间接触博客，知识点感觉更加牢固了。当然函数和方法还是记得不是很清楚，需要加强练习。到现在基本是有思路的实例，写出来还是可以的。</p>
-<h1 id="5-发展"><a href="#5-发展" class="headerlink" title="5,发展"></a>5,发展</h1><p>通过学习Python，我了解了大数据。接下来先要学习爬虫，办公自动化，然后就是数据分析。当然Python目前还是停留在入门阶段，精通还需要继续学习。</p>
-<p>以上就是我正好两年的Python学习总结。</p>
+turtle<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#画笔左转</span>
+turtle<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#画笔右转</span>
+turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span>radius<span class="token punctuation">,</span>extent<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#根据半径radius绘制extent角度的弧形。</span>
+
+turtle<span class="token punctuation">,</span>pensize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#控制画笔大小</span>
+turtle<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#设置画笔颜色</span>
+
+<span class="token comment" spellcheck="true">#为画好的图形进行填充</span>
+turtle<span class="token punctuation">.</span>fillecolor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#设置填充色</span>
+turtle<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#开始填充</span>
+turtle<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#结束填充</span>
+</code></pre>
+<ol start="4">
+<li>学以致用</li>
+</ol>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#机械猫</span>
+<span class="token keyword">import</span> turtle <span class="token keyword">as</span> t
+
+<span class="token comment" spellcheck="true">#猫头</span>
+t<span class="token punctuation">.</span>setup<span class="token punctuation">(</span><span class="token number">550</span><span class="token punctuation">,</span><span class="token number">600</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"#00a0de"</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#00a0de'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">,</span><span class="token number">280</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#猫脸</span>
+t<span class="token punctuation">.</span>pencolor<span class="token punctuation">(</span><span class="token string">"black"</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">15</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#ffffff'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">250</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">35</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">45</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">45</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#脸部胡须左</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">110</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">205</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">340</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#胡须右</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">110</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">170</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#眼睛</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">220</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#ffffff'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">220</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#ffffff'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">180</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>left<span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>pu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">165</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#000000'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>fillcolor<span class="token punctuation">(</span><span class="token string">'#ffffff'</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>begin_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>end_fill<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020050218565423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
                 
             </div>
@@ -573,7 +716,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/posts/0.html">http://example.com/posts/0.html</a>
+                    <a href="http://example.com/posts/8c97.html">http://example.com/posts/8c97.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,8 +754,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">总结</span>
+                                <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">python模块</span>
                                 </a>
                             
                         </div>
@@ -788,24 +931,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/d7a7.html">
+                <a href="/posts/1630.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python之jieba库的使用笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python之程序的控制结构">
                         
-                        <span class="card-title">python之jieba库的使用笔记</span>
+                        <span class="card-title">python之程序的控制结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            pythonjieba库的使用笔记
+                            python之程序的控制结构
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
                         </span>
                         <span class="publish-author">
                             
@@ -822,8 +965,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python模块</span>
+                    <a href="/tags/python%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">python基础</span>
                     </a>
                     
                 </div>
@@ -837,19 +980,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/861b.html">
+                <a href="/posts/2ccb.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="python之文件和数据格式学习笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="python之time库的使用笔记">
                         
-                        <span class="card-title">python之文件和数据格式学习笔记</span>
+                        <span class="card-title">python之time库的使用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python之文件和数据格式学习笔记
+                            *python之time库的使用笔记*
                         
                     </div>
                     <div class="publish-info">
@@ -871,8 +1014,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">python基础</span>
+                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">python模块</span>
                     </a>
                     
                 </div>
