@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Markdown使用学习笔记</title>
+      <link href="posts/ce4b.html"/>
+      <url>posts/ce4b.html</url>
+      
+        <content type="html"><![CDATA[<p><strong>Markdown使用学习笔记</strong></p><span id="more"></span><h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><p>为什么要写这个，前不久用hexo搭建个人博客。搭建完后，怎么写博客，这又是个老大难的问题。经过百度，和大佬交流发现了Markdown这个词汇，继续百度，嗯，可以用这个编剧博客文章。我默默地打开了菜鸟教程，翻看着，这玩意不像用Word写东西，还有很多语法需要学习。突然有点想放弃，七天从入门到放弃。就这，这不行啊！写份笔记，加深一下记忆。</p><h1 id="2-本文内容"><a href="#2-本文内容" class="headerlink" title="2,本文内容"></a>2,本文内容</h1><h2 id="2-1Markdown介绍"><a href="#2-1Markdown介绍" class="headerlink" title="2.1Markdown介绍"></a>2.1Markdown介绍</h2><p>Q1：什么是Markdown？</p><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档</p><p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p><p>Markdown 编写的文档后缀为 ：.md, .markdown</p><p>以上是官方介绍，可是看出他就是个文本编辑器，只不过后缀名是.md，</p><p>Q2：Markdown的应用？</p><p>写电子书，博客，就想我现在写的这个。</p><h2 id="2-1-Markdown标题"><a href="#2-1-Markdown标题" class="headerlink" title="2.1,Markdown标题"></a>2.1,Markdown标题</h2><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/Markdown%E6%A0%87%E9%A2%98.3jv7hrqdrou0.png" alt="Markdown标题"></p><p>从上面的图片中可以整理到下面的表格</p><table><thead><tr><th align="center">名称</th><th align="center">md标记</th><th align="center">md格式</th></tr></thead><tbody><tr><td align="center">一级标题</td><td align="center">#</td><td align="center"># 这是一级标题</td></tr><tr><td align="center">二级标题</td><td align="center">##</td><td align="center">## 这是二级标题</td></tr><tr><td align="center">三级标题</td><td align="center">###</td><td align="center">### 这是三级标题</td></tr><tr><td align="center">四级标题</td><td align="center">####</td><td align="center">#### 这是三级标题</td></tr><tr><td align="center">五级标题</td><td align="center">#####</td><td align="center">##### 这是三级标题</td></tr><tr><td align="center">六级标题</td><td align="center">######</td><td align="center">###### 这是三级标题</td></tr></tbody></table><p>标题最多是六个，当第七第八时就是普通的了。</p><h2 id="2-2-Markdown段落格式"><a href="#2-2-Markdown段落格式" class="headerlink" title="2.2,Markdown段落格式"></a>2.2,Markdown段落格式</h2><ol><li><p>字体</p><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%AD%97%E4%BD%93.5i9o6fb43kw0.png" alt="字体"></p></li></ol><p>2.段落</p><blockquote><p>Markdown 段落没有特殊的格式，直接编写文字就好，<strong>段落的换行是使用两个以上空格加上回车</strong>。</p><p>当然也可以在段落后面使用一个空行来表示重新开始一个段落。</p></blockquote><p>这两句话没有明白是什么意思。</p><h2 id="2-3-Markdown列表"><a href="#2-3-Markdown列表" class="headerlink" title="2.3,Markdown列表"></a>2.3,Markdown列表</h2><p>常用的有两种列表：有序列表和无序列表。</p><ol><li>无序列表</li></ol><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8.1gel3thpk2ps.png" alt="无序列表"></p><p>嘿，不写这篇笔记，我还真不知道*，+，-都可以用来表达无序列表，我只知道快捷键，</p><ol start="2"><li>有序列表</li></ol><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.5m53h9hzjpw0.png" alt="有序列表"></p><ol start="3"><li>列表嵌套</li></ol><p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20210513111239185.png" alt="image-20210513111239185"></p><p>四个空格等于一个tab键</p><h2 id="2-4-markdown区块"><a href="#2-4-markdown区块" class="headerlink" title="2.4,markdown区块"></a>2.4,markdown区块</h2><p>区块是用来做什么的，我没有怎么用过。他有两种用法。</p><ol><li>平级关系</li></ol><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%8C%BA%E5%9D%971.7icsefszaks0.png" alt="区块1"></p><ol><li>嵌套关系</li></ol><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%8C%BA%E5%9D%972.3ejzoew96l40.png" alt="区块2"></p><h2 id="2-5-Markdown代码"><a href="#2-5-Markdown代码" class="headerlink" title="2.5,Markdown代码"></a>2.5,Markdown代码</h2><p>有几种用法</p><ul><li><p>如果是一个函数或者一个片段<img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E4%BB%A3%E7%A0%811.3fpcgc9ifyg0.png" alt="代码1"></p></li><li><p>还有一种表达方式</p><p>![代码 2](<a href="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E4%BB%A3%E7%A0%81">https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/代码</a> 2.4k17474wgoe0.png)</p></li></ul><p>这两种都很常用</p><h2 id="2-6-Markdown链接"><a href="#2-6-Markdown链接" class="headerlink" title="2.6,Markdown链接"></a>2.6,Markdown链接</h2><p>两种方式<br><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E9%93%BE%E6%8E%A51.6n5pi76fnh00.png"></p><p>[]是链接名称 ,()l链接地址</p><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E9%93%BE%E6%8E%A522.7cd91kmws1k0.png" alt="链接22"></p><p>区别很直观</p><h2 id="2-7-Markdown图片"><a href="#2-7-Markdown图片" class="headerlink" title="2.7,Markdown图片"></a>2.7,Markdown图片</h2><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%9B%BE%E7%89%87.38a7o6bn6w20.png" alt="图片"></p><p>[]里面是图片名称，()是图片的链接</p><h2 id="2-8-Markdown表格"><a href="#2-8-Markdown表格" class="headerlink" title="2.8,Markdown表格"></a>2.8,Markdown表格</h2><p>再也不用在PPT里面做表格，截屏复制过来了。</p><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E8%A1%A8%E6%A0%BC.6lgrc0fpdmo0.png" alt="表格"></p><p>就是需要注意双引号，居中，左右。</p><h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3,总结"></a>3,总结</h1><p>虽然软件里面也有快捷键，但是多了解也不一定是坏事，反而 事半功倍</p><p>这就是以上内容，我的笔记。</p><p>谢谢您的观看，文章有错误，欢迎你的指正；如果对您有帮助，是我的荣幸。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python之jieba库的使用笔记</title>
       <link href="posts/d7a7.html"/>
       <url>posts/d7a7.html</url>

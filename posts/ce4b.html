@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python之time库的使用笔记, huan&#39;s Notebook">
+    <meta name="keywords" content="Markdown使用学习笔记, huan&#39;s Notebook">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python之time库的使用笔记 | huan&#39;s Notebook</title>
+    <title>Markdown使用学习笔记 | huan&#39;s Notebook</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -338,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python之time库的使用笔记</h1>
+                    <h1 class="description center-align post-title">Markdown使用学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -459,8 +459,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python模块</span>
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
                             </a>
                         
                     </div>
@@ -471,8 +471,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
                             </a>
                         
                     </div>
@@ -484,21 +484,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-11
+                    2021-05-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    642
+                    783
                 </div>
                 
 
@@ -525,77 +525,115 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><em><strong>*python之time库的使用笔记*</strong></em></p>
+                <p><strong>Markdown使用学习笔记</strong></p>
 <span id="more"></span>
 
-<ol>
-<li>time库简介<br>Q1:什么是time库<br>这是一个标准库，用来处理时间。<br>调用方法<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
-time<span class="token punctuation">.</span><span class="token operator">&lt;</span>b<span class="token operator">></span>
-</code></pre>
-Q2：：它有什么用？<br>计算机的时间表达；<br>提供获取系统时间并格式化输出功能<br>提供系统级精确计时功能，用于程序性能分析。</li>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><p>为什么要写这个，前不久用hexo搭建个人博客。搭建完后，怎么写博客，这又是个老大难的问题。经过百度，和大佬交流发现了Markdown这个词汇，继续百度，嗯，可以用这个编剧博客文章。我默默地打开了菜鸟教程，翻看着，这玩意不像用Word写东西，还有很多语法需要学习。突然有点想放弃，七天从入门到放弃。就这，这不行啊！写份笔记，加深一下记忆。</p>
+<h1 id="2-本文内容"><a href="#2-本文内容" class="headerlink" title="2,本文内容"></a>2,本文内容</h1><h2 id="2-1Markdown介绍"><a href="#2-1Markdown介绍" class="headerlink" title="2.1Markdown介绍"></a>2.1Markdown介绍</h2><p>Q1：什么是Markdown？</p>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档</p>
+<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
+<p>Markdown 编写的文档后缀为 ：.md, .markdown</p>
+<p>以上是官方介绍，可是看出他就是个文本编辑器，只不过后缀名是.md，</p>
+<p>Q2：Markdown的应用？</p>
+<p>写电子书，博客，就想我现在写的这个。</p>
+<h2 id="2-1-Markdown标题"><a href="#2-1-Markdown标题" class="headerlink" title="2.1,Markdown标题"></a>2.1,Markdown标题</h2><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/Markdown%E6%A0%87%E9%A2%98.3jv7hrqdrou0.png" alt="Markdown标题"></p>
+<p>从上面的图片中可以整理到下面的表格</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">md标记</th>
+<th align="center">md格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">一级标题</td>
+<td align="center">#</td>
+<td align="center"># 这是一级标题</td>
+</tr>
+<tr>
+<td align="center">二级标题</td>
+<td align="center">##</td>
+<td align="center">## 这是二级标题</td>
+</tr>
+<tr>
+<td align="center">三级标题</td>
+<td align="center">###</td>
+<td align="center">### 这是三级标题</td>
+</tr>
+<tr>
+<td align="center">四级标题</td>
+<td align="center">####</td>
+<td align="center">#### 这是三级标题</td>
+</tr>
+<tr>
+<td align="center">五级标题</td>
+<td align="center">#####</td>
+<td align="center">##### 这是三级标题</td>
+</tr>
+<tr>
+<td align="center">六级标题</td>
+<td align="center">######</td>
+<td align="center">###### 这是三级标题</td>
+</tr>
+</tbody></table>
+<p>标题最多是六个，当第七第八时就是普通的了。</p>
+<h2 id="2-2-Markdown段落格式"><a href="#2-2-Markdown段落格式" class="headerlink" title="2.2,Markdown段落格式"></a>2.2,Markdown段落格式</h2><ol>
+<li><p>字体</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%AD%97%E4%BD%93.5i9o6fb43kw0.png" alt="字体"></p>
+</li>
 </ol>
-<p>以上了解这么多，其他的咱也不知道，咋也不想学。</p>
-<p> 2 新知识<br>这部分分为三类：时间获取、时间格式化、程序计时。</p>
+<p>2.段落</p>
+<blockquote>
+<p>Markdown 段落没有特殊的格式，直接编写文字就好，<strong>段落的换行是使用两个以上空格加上回车</strong>。</p>
+<p>当然也可以在段落后面使用一个空行来表示重新开始一个段落。</p>
+</blockquote>
+<p>这两句话没有明白是什么意思。</p>
+<h2 id="2-3-Markdown列表"><a href="#2-3-Markdown列表" class="headerlink" title="2.3,Markdown列表"></a>2.3,Markdown列表</h2><p>常用的有两种列表：有序列表和无序列表。</p>
+<ol>
+<li>无序列表</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8.1gel3thpk2ps.png" alt="无序列表"></p>
+<p>嘿，不写这篇笔记，我还真不知道*，+，-都可以用来表达无序列表，我只知道快捷键，</p>
+<ol start="2">
+<li>有序列表</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.5m53h9hzjpw0.png" alt="有序列表"></p>
+<ol start="3">
+<li>列表嵌套</li>
+</ol>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20210513111239185.png" alt="image-20210513111239185"></p>
+<p>四个空格等于一个tab键</p>
+<h2 id="2-4-markdown区块"><a href="#2-4-markdown区块" class="headerlink" title="2.4,markdown区块"></a>2.4,markdown区块</h2><p>区块是用来做什么的，我没有怎么用过。他有两种用法。</p>
+<ol>
+<li>平级关系</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%8C%BA%E5%9D%971.7icsefszaks0.png" alt="区块1"></p>
+<ol>
+<li>嵌套关系</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%8C%BA%E5%9D%972.3ejzoew96l40.png" alt="区块2"></p>
+<h2 id="2-5-Markdown代码"><a href="#2-5-Markdown代码" class="headerlink" title="2.5,Markdown代码"></a>2.5,Markdown代码</h2><p>有几种用法</p>
 <ul>
-<li>第一部分<br>店小二上代码</li>
+<li><p>如果是一个函数或者一个片段<img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E4%BB%A3%E7%A0%811.3fpcgc9ifyg0.png" alt="代码1"></p>
+</li>
+<li><p>还有一种表达方式</p>
+<p>![代码 2](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E4%BB%A3%E7%A0%81">https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/代码</a> 2.4k17474wgoe0.png)</p>
+</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#获取当前时间戳，浮点数类型，</span>
-<span class="token number">1589618223.847726</span>
-</code></pre>
-<p>Q：这个怎么看？不像是个时间。<br>事实上他是表示从1970年1月1日0:00开始到当前 这一时刻为止的一个以妙为单位的数值。因为不好理解，所以。。。</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>ctime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#获取当前系统时间并以易读方式表示，返回字符串类型</span>
-Sat May <span class="token number">16</span> <span class="token number">16</span><span class="token punctuation">:</span><span class="token number">37</span><span class="token punctuation">:</span><span class="token number">03</span> <span class="token number">2020</span>
-</code></pre>
-<p>现在客观满意了吗？？？</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>gmtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#获取当前时间，表示为计算机可处理的时间格式        </span>
-time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">37</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">137</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-</code></pre>
-<p>还是看不懂？要求高</p>
-<ul>
-<li>第二部分<br>——时间格式化！<br>类似字符串格式化。需要模板。是个怎么回事呢?</li>
-</ul>
-<pre class=" language-python"><code class="language-python">strftime<span class="token punctuation">(</span>tep<span class="token punctuation">,</span>ts<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#tep是格式化模板字符串，用来定义输出结果。ts计算机内部时间类型变量。</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %a %H:%M:%S"</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>gmtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token number">2020</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">16</span> Sat <span class="token number">08</span><span class="token punctuation">:</span><span class="token number">37</span><span class="token punctuation">:</span><span class="token number">03</span>
-</code></pre>
-<p>是不是很直观。<br><img src="https://img-blog.csdnimg.cn/20200516173936567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>嗯!就是这样。</p>
-<pre class=" language-python"><code class="language-python">strptimr<span class="token punctuation">(</span>str<span class="token punctuation">.</span>tpl<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#st是字符串类型的时间值，teo：是格式化模板字符串，用来定义输出结果。</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span><span class="token string">"2018-01-26 12:55:20"</span><span class="token punctuation">,</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2018</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">26</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">55</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">26</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-</code></pre>
-<p>这个函数看明白了吗？可以这么说“time.strftime与time.strptime互补”</p>
-<ul>
-<li>第三部分——程序计时<br>测试程序起止动作所经历时间的过程。</li>
-</ul>
-<pre class=" language-python"><code class="language-python">time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#返回一个CPU级别的精确时间计数值，单位为妙。调用一次没什么意义，连续调用</span>
-<span class="token operator">>></span><span class="token operator">></span>start <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter <span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span>
-<span class="token number">0.4573813</span>
-<span class="token operator">>></span><span class="token operator">></span>end <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter <span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span>
-<span class="token number">0.4573824</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span>
-<span class="token number">1.1000000000316312e-06</span>
-</code></pre>
-<p>给我的感觉不得看，我是看不懂。</p>
-<pre class=" language-python"><code class="language-python">sleep<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#s拟休眠的时间，可以是紫虎成</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">def</span> wait<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-          time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span>wait<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wrld"</span><span class="token punctuation">)</span>
-hello
-<span class="token comment" spellcheck="true">#5妙后出现</span>
-wrld
-</code></pre>
-<p>感谢观看，我在自学python，正在为二级计算机复习python，不对的请指出，如果您也在自学。加油！</p>
+<p>这两种都很常用</p>
+<h2 id="2-6-Markdown链接"><a href="#2-6-Markdown链接" class="headerlink" title="2.6,Markdown链接"></a>2.6,Markdown链接</h2><p>两种方式<br><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E9%93%BE%E6%8E%A51.6n5pi76fnh00.png"></p>
+<p>[]是链接名称 ,()l链接地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E9%93%BE%E6%8E%A522.7cd91kmws1k0.png" alt="链接22"></p>
+<p>区别很直观</p>
+<h2 id="2-7-Markdown图片"><a href="#2-7-Markdown图片" class="headerlink" title="2.7,Markdown图片"></a>2.7,Markdown图片</h2><p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E5%9B%BE%E7%89%87.38a7o6bn6w20.png" alt="图片"></p>
+<p>[]里面是图片名称，()是图片的链接</p>
+<h2 id="2-8-Markdown表格"><a href="#2-8-Markdown表格" class="headerlink" title="2.8,Markdown表格"></a>2.8,Markdown表格</h2><p>再也不用在PPT里面做表格，截屏复制过来了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/%E8%A1%A8%E6%A0%BC.6lgrc0fpdmo0.png" alt="表格"></p>
+<p>就是需要注意双引号，居中，左右。</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3,总结"></a>3,总结</h1><p>虽然软件里面也有快捷键，但是多了解也不一定是坏事，反而 事半功倍</p>
+<p>这就是以上内容，我的笔记。</p>
+<p>谢谢您的观看，文章有错误，欢迎你的指正；如果对您有帮助，是我的荣幸。</p>
 
                 
             </div>
@@ -622,7 +660,7 @@ wrld
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/posts/2ccb.html">http://example.com/posts/2ccb.html</a>
+                    <a href="http://example.com/posts/ce4b.html">http://example.com/posts/ce4b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,8 +698,8 @@ wrld
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python模块</span>
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
                                 </a>
                             
                         </div>
@@ -833,46 +871,48 @@ wrld
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/8c97.html">
+                <a href="/posts/ce4b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python之turtle库的使用笔记">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Markdown使用学习笔记">
                         
-                        <span class="card-title">python之turtle库的使用笔记</span>
+                        <span class="card-title">Markdown使用学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python之turtle库的使用笔记
+                            Markdown使用学习笔记
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python模块</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
@@ -886,24 +926,24 @@ wrld
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/75eb.html">
+                <a href="/posts/d7a7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python之random学习笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python之jieba库的使用笔记">
                         
-                        <span class="card-title">python之random学习笔记</span>
+                        <span class="card-title">python之jieba库的使用笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python之random学习笔记
+                            pythonjieba库的使用笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
