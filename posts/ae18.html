@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python之pyinstall库的使用笔记, huan&#39;s Notebook">
+    <meta name="keywords" content="hexo搭建学习笔记, huan&#39;s Notebook">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python之pyinstall库的使用笔记 | huan&#39;s Notebook</title>
+    <title>hexo搭建学习笔记 | huan&#39;s Notebook</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -338,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/xxx.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python之pyinstall库的使用笔记</h1>
+                    <h1 class="description center-align post-title">hexo搭建学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -457,25 +457,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                <span class="chip bg-color">python模块</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/python/" class="post-category">
-                                python
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -484,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-11
+                    2021-05-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    500
+                    33
                 </div>
                 
 
@@ -525,25 +512,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>python之用pyinstall库的使用笔记</strong></p>
+                <p><strong>hexo搭建学习笔记</strong></p>
 <span id="more"></span>
-<p>@<a href="%E7%AC%94%E8%AE%B0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="一，前言"><a href="#一，前言" class="headerlink" title="一，前言"></a>一，前言</h1><p>哈喽，大家好！相信大家写了很多有意思的程序了吧，我的《python程序设计》’文件夹有很多有意思的程序。如果想分享给我们的伙伴，是不是对方电脑也必须装有idle环境。小伙伴同意了那就好说，如果不同意呢？“我喜欢Java，我不要python”，那就。。。当然大佬看到表情应该已经明白了我要作甚，小白。。。<br>开始记笔记</p>
-<h1 id="二，pyinstaller库基本介绍"><a href="#二，pyinstaller库基本介绍" class="headerlink" title="二，pyinstaller库基本介绍"></a>二，pyinstaller库基本介绍</h1><h2 id="1，pyinstaller库概述"><a href="#1，pyinstaller库概述" class="headerlink" title="1，pyinstaller库概述"></a>1，pyinstaller库概述</h2><p>将.py源代码转换成无需要源代码的可执行文件<br>pyinstaller是第三方库</p>
-<p>官方网站：<a target="_blank" rel="noopener" href="http://www.pyinstaller.org/">http://www.pyinstaller.org</a><br>第三方库：使用前需要额外安装<br>第三方库安装需要pip工具</p>
-<h2 id="2，pyinstaller库的安装"><a href="#2，pyinstaller库的安装" class="headerlink" title="2，pyinstaller库的安装"></a>2，pyinstaller库的安装</h2><pre><code>pip install pyinstaller
-</code></pre>
-<p>这是个命令，不是代码，需要在cmd中运行。cmd、cmd、cmd。</p>
-<h1 id="三，pyinstaller库使用说明"><a href="#三，pyinstaller库使用说明" class="headerlink" title="三，pyinstaller库使用说明"></a>三，pyinstaller库使用说明</h1><h2 id="1，简单的使用"><a href="#1，简单的使用" class="headerlink" title="1，简单的使用"></a>1，简单的使用</h2><p>在cmd命令行中</p>
-<pre><code>pyinstaller -f &lt;文件名&gt;
-</code></pre>
-<h2 id="2，pyinstaller库常用参数"><a href="#2，pyinstaller库常用参数" class="headerlink" title="2，pyinstaller库常用参数"></a>2，pyinstaller库常用参数</h2><p><img src="https://img-blog.csdnimg.cn/2020061613514012.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="3，简单使用"><a href="#3，简单使用" class="headerlink" title="3，简单使用"></a>3，简单使用</h2><p>看明白了，但是不会用，那就挺尴尬的<br>我尝试过许多，也就成功了几。<br><img src="https://img-blog.csdnimg.cn/20200616140427400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>就让我展示一下我的爱国心<br>需要的准备ico图标文件，py文件</p>
-<p><img src="https://img-blog.csdnimg.cn/20200616144059299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzQ4ODQw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">输入两个文件夹所在位置<br>之后就会有。。。<br><img src="https://img-blog.csdnimg.cn/20200616145815957.png" alt="在这里插入图片描述"><br>文件存放在dist文件夹中<br><img src="https://img-blog.csdnimg.cn/20200616144155272.png" alt="在这里插入图片描述"></p>
-<h1 id="四，总结"><a href="#四，总结" class="headerlink" title="四，总结"></a>四，总结</h1><p>这个模块学起来还是挺简单的，但是做起，我做这个演示的时候也失败了很多次，给大家挺个建议直接放到他的目录下试试<br><img src="https://img-blog.csdnimg.cn/20200616145235677.png" alt="在这里插入图片描述"><br>get到了就可以在给没有安装python环境电脑上运行python程序，还可以在小姐姐面前秀一秀，，兴许会得到她们的芳心。嘻嘻</p>
-<p>也不是想让更多人看见，我只是喜欢通过这种方法记笔记，加深印象。我自己是不喜欢写字的，字写得也很丑。当然如果帮到你了，我很荣幸。</p>
-<p>哈哈哈嗝</p>
 
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><h1 id="2-环境准备"><a href="#2-环境准备" class="headerlink" title="2,环境准备"></a>2,环境准备</h1><h2 id="2-1-node-js安装"><a href="#2-1-node-js安装" class="headerlink" title="2.1,node.js安装"></a>2.1,node.js安装</h2><h2 id="2-2-git安装"><a href="#2-2-git安装" class="headerlink" title="2.2.git安装"></a>2.2.git安装</h2><h1 id="3-hexo搭建"><a href="#3-hexo搭建" class="headerlink" title="3,hexo搭建"></a>3,hexo搭建</h1><h2 id="4-DIY主题"><a href="#4-DIY主题" class="headerlink" title="4,DIY主题"></a>4,DIY主题</h2><h1 id="5-总结"><a href="#5-总结" class="headerlink" title="5,总结"></a>5,总结</h1>
                 
             </div>
             <hr/>
@@ -569,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/posts/ebb7.html">http://example.com/posts/ebb7.html</a>
+                    <a href="http://example.com/posts/ae18.html">http://example.com/posts/ae18.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,11 +578,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                                    <span class="chip bg-color">python模块</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -780,49 +748,38 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/75eb.html">
+                <a href="/posts/ae18.html">
                     <div class="card-image">
                         
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="hexo搭建学习笔记">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python之random学习笔记">
-                        
-                        <span class="card-title">python之random学习笔记</span>
+                        <span class="card-title">hexo搭建学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python之random学习笔记
+                            hexo搭建学习笔记
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-14
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            欢者本欢
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python%E6%A8%A1%E5%9D%97/">
-                        <span class="chip bg-color">python模块</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -833,31 +790,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1afb.html">
+                <a href="/posts/ce4b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python基础语法之字符串类型及操作">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Markdown使用学习笔记">
                         
-                        <span class="card-title">Python基础语法之字符串类型及操作</span>
+                        <span class="card-title">Markdown使用学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python基础语法之字符串类型及操作
+                            Markdown使用学习笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
@@ -867,8 +824,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">python基础</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
