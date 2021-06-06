@@ -1,0 +1,1845 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python之BeautifulSoup库学习笔记, huan&#39;s Notebook">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>python之BeautifulSoup库学习笔记 | huan&#39;s Notebook</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">huan&#39;s Notebook</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/CV">
+          
+          <i class="fas fa-address-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>个人简历</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">huan&#39;s Notebook</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/CV " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-address-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>个人简历</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">python之BeautifulSoup库学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">Python爬虫</span>
+                            </a>
+                        
+                            <a href="/tags/Python%E6%A8%A1%E5%9D%97/">
+                                <span class="chip bg-color">Python模块</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-06-06
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>python之BeautifulSoup库学习笔记</strong></p>
+<span id="more"></span>
+
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h1><p>前面我通过<code>r.text</code>把网页进行打印，输出，结果很好，我们都成功了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/1-1.4jis99r1m3y0.png" alt="1-1"></p>
+<p>当然还有utf-8编码形式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/1-2.5aq7fgwubs00.png" alt="1-2"></p>
+<p>虽然在utf-8编码形式下可以看到一些文字，增加了阅读体验，但是我想问问还有没有更好的方法增加阅读体验</p>
+<p>答案是肯定有的，我们一起来看看吧。</p>
+<h1 id="2-BeautifulSoup库的安装"><a href="#2-BeautifulSoup库的安装" class="headerlink" title="2,BeautifulSoup库的安装"></a>2,BeautifulSoup库的安装</h1><h2 id="2-1-官网介绍"><a href="#2-1-官网介绍" class="headerlink" title="2.1,官网介绍"></a>2.1,官网介绍</h2><p>[这是BeautifulSoup库的官网](<a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/">Beautiful Soup: We called him Tortoise because he taught us. (crummy.com)</a>)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.1bt604tvzfds.png" alt="image"></p>
+<p>都是英文，反正我是看不懂，不看</p>
+<p>人称外号“美味汤”，当然这是第三方库了。它可以解析HTML格式进行解析、提取相关信息。它的使用原来就是把你给的文本变成一锅汤，进行煲制，怪不得叫美味汤呢</p>
+<h2 id="2-2-安装"><a href="#2-2-安装" class="headerlink" title="2.2,安装"></a>2.2,安装</h2><p>这个很简单吧，直接上代码</p>
+<pre><code>pip install BeautifulSoup4
+</code></pre>
+<p>即可进行安装。</p>
+<h2 id="2-3-测试"><a href="#2-3-测试" class="headerlink" title="2.3,测试"></a>2.3,测试</h2><h3 id="2-3-1-分析网页"><a href="#2-3-1-分析网页" class="headerlink" title="2.3.1,分析网页"></a>2.3.1,分析网页</h3><p>安装成功了吗。我们测试一下不就知道了吗。</p>
+<p><a href="(https://www.python123.io/ws/demo.html)">我们测试的网页是</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.6ybu2syibiw0.png" alt="image"></p>
+<p>我们再看一下他的源代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.o1pm3tnvnw0.png" alt="image"></p>
+<p>这应该就是前端知识吧HTML</p>
+<p>是以&lt;&gt;为主所封装的一对信息。</p>
+<h3 id="2-3-2-实践"><a href="#2-3-2-实践" class="headerlink" title="2.3.2,实践"></a>2.3.2,实践</h3><p>好！一切准备就绪，打开idle</p>
+<ol>
+<li><p>获取源代码</p>
+<p>获取源代码有两种方式</p>
+<ul>
+<li><p>手动获取：如果是edge浏览器在当前页面Ctrl+U即可，之后你会发现就是上面的那张图<img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.o1pm3tnvnw0.png" alt="image"></p>
+</li>
+<li><p><code>.get()</code>方法</p>
+<p>我们应该学以致用，试试吧</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> requests
+<span class="token operator">>></span><span class="token operator">></span> r <span class="token operator">=</span>  requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"https://www.python123.io/ws/demo.html"</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> r<span class="token punctuation">.</span>status_code
+<span class="token number">200</span>
+<span class="token operator">>></span><span class="token operator">></span> r<span class="token punctuation">.</span>text
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.3obltf7s3480.png" alt="image"></p>
+<p>是不是很简单</p>
+</li>
+</ul>
+</li>
+<li><p>BeautifulSoup库导人</p>
+<p>定义一个demo变量</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> demo <span class="token operator">=</span> r<span class="token punctuation">.</span>text
+</code></pre>
+<p>导入库</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+</code></pre>
+<p>因为库名太长，所以我们用bs4来表示，因此<code>from bs4</code>导入了一个类叫BeautifulSoup</p>
+</li>
+<li><p>做汤</p>
+<p>我们需要吧demo也面做成一个BeautifulSoup可以理解的汤</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>demo<span class="token punctuation">,</span> <span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>打印输出</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>prettify<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.3tzpzlqvzro0.png" alt="image"></p>
+<p>是不是比之前的好看多了</p>
+<p>到这里，我们的BeautifulSoup4库也安装成功了。</p>
+<h3 id="2-3-3小结"><a href="#2-3-3小结" class="headerlink" title="2.3.3小结"></a>2.3.3小结</h3></li>
+</ol>
+<p>怎么使用BeautifulSoup库呢，只需要两行代码</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token operator">>></span><span class="token operator">></span> soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span><span class="token string">"&lt;p>data&lt;/p>"</span><span class="token punctuation">,</span> <span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>bs4导入BeautifulSoup类</p>
+<p>我们做汤，用一个变量。里面有两个变量</p>
+<ul>
+<li><code>&quot;&lt;p&gt;data&lt;/p&gt;&quot;</code>：需要解析的信息</li>
+<li><code>&quot;html.parser&quot;</code>：解析HTML时需要用到的解析器</li>
+</ul>
+<h1 id="3-BeautifulSoup库的基本元素"><a href="#3-BeautifulSoup库的基本元素" class="headerlink" title="3,BeautifulSoup库的基本元素"></a>3,BeautifulSoup库的基本元素</h1><p>前面我们说是测试，实际上也算是一个小实例理解了BeautifulSoup库的原理，”熬汤“</p>
+<p>那我们再来深入了解一下这个库</p>
+<h2 id="3-1-BeautifulSoup库的理解"><a href="#3-1-BeautifulSoup库的理解" class="headerlink" title="3.1,BeautifulSoup库的理解"></a>3.1,BeautifulSoup库的理解</h2><ol>
+<li><p>理解这个，我们先了解一下什么是HTML文件</p>
+<p>HTML文件打开会发现是以一对&lt;&gt;成对出现的，一组&lt;&gt;构成的标签组织起来的。标签之间存在上下级关系形成标签数。</p>
+<p>可以说BeautifulSoup库是解析、遍历、维护“标签树”的功能库。</p>
+<p>只要我们的文件是“标签树”类型，那么BeautifulSoup库都可以解析。</p>
+</li>
+<li><p>标签格式</p>
+<p>理解了什么是HTML文件，那么每一个标签的具体格式又知多少</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> .... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>以p标签为例</p>
+<ul>
+<li><p>首先可以看到是一对&lt;&gt;形成的。</p>
+</li>
+<li><p><code>&lt;p&gt;..&lt;/p&gt;</code>：标签 tag；p是标签的名称 name；在最开始和最后出现，表明这一个标签的范围。</p>
+</li>
+<li><p><code>class=&quot;title&quot;</code>：属性域，包含0个或多个属性。属性是用来定义这个标签的特点的，</p>
+<ul>
+<li><code>class</code>：属性名</li>
+<li><code>title</code>：属性里的内容</li>
+</ul>
+<p>任何一个属性都有它的特性和它的值，使用可以说属性是由键值对构成的<br>这样是不是明白了一些</p>
+<h2 id="3-2-BeautifulSoup库的导入"><a href="#3-2-BeautifulSoup库的导入" class="headerlink" title="3.2,BeautifulSoup库的导入"></a>3.2,BeautifulSoup库的导入</h2></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li> BeautifulSoup库，也叫    BeautifulSoup4或bs4</li>
+</ul>
+<p>  使用应该采用一些引用方式</p>
+<ol>
+<li><p>常见方式</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+</code></pre>
+<p>这个在前面我们就用过    </p>
+<p>从bs4库中引入了一个类型，这个类型叫BeautifulSoup</p>
+</li>
+<li><p>传统方式</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> bs4
+</code></pre>
+<p>这个使用起来比较广。</p>
+</li>
+</ol>
+<h2 id="3-3-BeautifulSoup类"><a href="#3-3-BeautifulSoup类" class="headerlink" title="3.3,BeautifulSoup类"></a>3.3,BeautifulSoup类</h2><p>首先HTML文档与标签树是一一对应的，标签树经过BeautifulSoup类处理，标签树转换成eautifulSoup类。因此可以理解为BeautifulSoup类型可以代表标签树。</p>
+<p>综上所述：html、标签树和BeautifulSoup类三者等价。</p>
+<p>在这个基础上，通过BeautifulSoup类使得标签树形成一个变量，而对变量的处理就是对标签树的处理。</p>
+<p>BeautifulSoup对应一个HTML/XML文档的全部内容</p>
+<h2 id="3-4-BeautifulSoup库解析器"><a href="#3-4-BeautifulSoup库解析器" class="headerlink" title="3.4,BeautifulSoup库解析器"></a>3.4,BeautifulSoup库解析器</h2><p>前面提过解析器的作用，解析HTML/XML文档。当然</p>
+<table>
+<thead>
+<tr>
+<th>解析器</th>
+<th>使用方法</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bs4的HTML解析器</td>
+<td><code>BeautifulSoup(mk, &quot;html.parser&quot;)</code></td>
+<td>安装bs4库</td>
+</tr>
+<tr>
+<td>lxml的HTML解析器</td>
+<td><code>BeautifulSoup(mk, &quot;lxml&quot;)</code></td>
+<td><code>pip install lxml</code></td>
+</tr>
+<tr>
+<td>lxml的XML解析器</td>
+<td><code>BeautifulSoup(mk, &quot;xml&quot;)</code></td>
+<td><code>pip install lxml</code></td>
+</tr>
+<tr>
+<td>html5lib解析器</td>
+<td><code>BeautifulSoup(mk, &quot;html5lib&quot;)</code></td>
+<td><code>pip install html5lib</code></td>
+</tr>
+</tbody></table>
+<p>这里无论解析HTML/XML以上四种都可以，那还是有区别的如果有较高的体验，所以就</p>
+<h2 id="3-5-BeautifulSoup类的基本元素"><a href="#3-5-BeautifulSoup类的基本元素" class="headerlink" title="3.5,BeautifulSoup类的基本元素"></a>3.5,BeautifulSoup类的基本元素</h2><table>
+<thead>
+<tr>
+<th>基本元素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tag</td>
+<td>标签，最基本的信息组织单元，分别用<code>&lt;&gt;</code>和<code>&lt;/&gt;</code>标明开头和结尾。</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>标签的名字，<code>&lt;p&gt;...&lt;/p&gt;</code>的名字是“p”，格式：<code>&lt;tag&gt;.name</code></td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>标签的属性，字典形式组织，格式：<code>&lt;tag&gt;.attrs</code></td>
+</tr>
+<tr>
+<td>NavigableString</td>
+<td>标签内非属性字符串，<code>&lt;&gt;...&lt;/&gt;</code>中字符串，格式：<code>&lt;tag&gt;.string</code></td>
+</tr>
+<tr>
+<td>Comment</td>
+<td>标签内字符串的注释部分，一种特殊的Comment类型</td>
+</tr>
+</tbody></table>
+<p>看的是不是眼花缭乱，好，我们照着敲一下，</p>
+<p>在此把源代码放出来，咱们对照着敲：<img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.o1pm3tnvnw0.png" alt="image"></p>
+<ol>
+<li><p>tag标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>title
+<span class="token operator">&lt;</span>title<span class="token operator">></span>This <span class="token keyword">is</span> a python demo page<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.iiioe6cm1js.png" alt="image"><br> 看标签就这样出来了。</p>
+</li>
+<li><p>获取链接标签的内容</p>
+<p>定义一个标签，获取HTML<code>&lt;a&gt;...&lt;/a&gt;</code>标签的内容，也就是链接标签的内容。</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> tag <span class="token operator">=</span> soup<span class="token punctuation">.</span>a
+<span class="token operator">>></span><span class="token operator">></span> tag
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.3ysfeek9b6i0.png" alt="image"></p>
+<p>​    可以看到，<code>&lt;a&gt;...&lt;/a&gt;</code>标签内容输出了出来</p>
+<p>我怎么发现这里面还有<code>&lt;a&gt;...&lt;/a&gt;</code>标签</p>
+</li>
+<li><p>标签的名字</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>name
+<span class="token string">'a'</span>
+</code></pre>
+<p>我们知道这个标签就是a，所以<code>soup.a.name</code>如果不知道这个标签名字呢？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.1kkg59ucvohs.png" alt="image"></p>
+<p>这里我们引出几个名字，子标签，父标签，爷······</p>
+<p>查看<code>&lt;a&gt;....&lt;/a&gt;</code>的父标签，上一层标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name
+<span class="token string">'p'</span>
+<span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name
+<span class="token string">'body'</span>
+</code></pre>
+<p><code>&lt;p&gt;..&lt;/p&gt;</code>是父标签，<code>&lt;body&gt;..&lt;/body&gt;</code>是<code>&lt;p&gt;..&lt;/p&gt;</code>的父标签，打印出来是字符串类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.7alxssacbe80.png" alt="image"></p>
+</li>
+<li><p>标签的属性信息</p>
+<p>以<code>&lt;a&gt;..&lt;/a&gt;</code>为例</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> tag <span class="token operator">=</span> soup<span class="token punctuation">.</span>a
+<span class="token operator">>></span><span class="token operator">></span> tag<span class="token punctuation">.</span>attrs
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;'href': 'http://www.icourse163.org/course/BIT-268001', 'class': ['py1'], 'id': 'link1'&amp;#125;</span>
+</code></pre>
+<p>以字典形式出现<br><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.66na4kx073w0.png" alt="image"></p>
+<p>当然我们还可以对里面的信息进行提取</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> tag<span class="token punctuation">.</span>attrs<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">'py1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> tag<span class="token punctuation">.</span>attrs<span class="token punctuation">[</span><span class="token string">'href'</span><span class="token punctuation">]</span>
+<span class="token string">'http://www.icourse163.org/course/BIT-268001'</span>
+<span class="token operator">>></span><span class="token operator">></span> tag<span class="token punctuation">.</span>attrs<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span>
+<span class="token string">'link1'</span>
+</code></pre>
+</li>
+<li><p>标签的NavigableString元素</p>
+<p>这是个字符串类型，表现的是尖括号标签之间的字符串</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>string
+<span class="token string">'Basic Python'</span>
+<span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>p
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>p
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> soupp<span class="token punctuation">.</span>p<span class="token punctuation">.</span>string
+</code></pre>
+</li>
+<li><p>Comment类型</p>
+<p>表格中说到，这是注释的意思，如果HTML页面中出现注释，该怎么处理。</p>
+<p>我们重新做一锅汤</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> newsoup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span><span class="token string">"&lt;b>&lt;!--This is a comment-->&lt;/b>&lt;p>This is not a comment&lt;/p>"</span><span class="token punctuation">,</span> <span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> newsoup<span class="token punctuation">.</span>b<span class="token punctuation">.</span>string
+'This <span class="token keyword">is</span> a comment
+</code></pre>
+<p><strong>注意：</strong><code>&lt;!--...--&gt;</code>里的内容是注释，所以<code>&lt;p&gt;...&lt;/p&gt;</code>里的不是注释。<br>好！到这里这一小部分就结束了。我们做个复盘，看图片<br><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.582lism30io0.png" alt="image"></p>
+</li>
+</ol>
+<h1 id="4-基于bs4库的HTML内容遍历方法"><a href="#4-基于bs4库的HTML内容遍历方法" class="headerlink" title="4,基于bs4库的HTML内容遍历方法"></a>4,基于bs4库的HTML内容遍历方法</h1><p>我们前面学习了如何整理HTML文本，变成一个树型结构。可以看到有很多标签，并且标明了标签与标签之间的关系。但还是有一些不方便看，我们把它换一种形式体现</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.3tzpzlqvzro0.png" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.233n2849n8o0.png" alt="image"></p>
+<p><strong>注意：<code>&lt;p&gt;...&lt;/p&gt;</code>下的<code>&lt;h&gt;...&lt;/h&gt;</code>应该是<code>&lt;b&gt;...&lt;/b&gt;</code>，以下不在标注</strong><br><strong>注意：<code>&lt;p&gt;...&lt;/p&gt;</code>下的<code>&lt;h&gt;...&lt;/h&gt;</code>应该是<code>&lt;b&gt;...&lt;/b&gt;``，以下不在标注** **注意：</code><p>…</p><code>下的</code><h>…</h><code>应该是</code><b>…</b>``，以下不在标注</strong></p>
+<p>这是又一次整理之后的。是不是</p>
+<p>我们把标签有称作节点。然鹅，我们可以进行遍历，有三种方式</p>
+<ul>
+<li>下行遍历：从根节点向叶子节点方向遍历</li>
+<li>上行遍历：和下行遍历相反，从叶子节点向根节点方向遍历。</li>
+<li>平行遍历：互相遍历方式，平级</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.11a6fr11gzts.png" alt="image"></p>
+<p>所以这段内容很容易理解。</p>
+<p>同时他们有不同的遍历 方法，我们分别看一下哈</p>
+<h2 id="4-1-标签树的下行遍历"><a href="#4-1-标签树的下行遍历" class="headerlink" title="4.1,标签树的下行遍历"></a>4.1,标签树的下行遍历</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.contents</td>
+<td>子节点的列表，将<code>&lt;tag&gt;</code>所有儿子节点存入列表。</td>
+</tr>
+<tr>
+<td>.childrea</td>
+<td>子节点的迭代类型，与<code>.contets</code>类似，用于循环遍历儿子节点</td>
+</tr>
+<tr>
+<td>.descendans</td>
+<td>子孙节点的迭代类型，包含所有子孙节点，用于循环遍历</td>
+</tr>
+</tbody></table>
+<p>我们分别对以上三种进行举例：</p>
+<ol>
+<li><p><code>.contents</code></p>
+<p>我们看<code>&lt;head&gt;...&lt;/head&gt;</code>标签的儿子节点</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>head<span class="token punctuation">.</span>contents
+<span class="token punctuation">[</span><span class="token operator">&lt;</span>title<span class="token operator">></span>This <span class="token keyword">is</span> a python demo page<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span class="token punctuation">]</span>
+</code></pre>
+<p>是<code>&lt;title&gt;...&lt;/title&gt;</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.71fov11ef8g0.png" alt="image"></p>
+<p>我先把这里理明白，下面怎么有点慢，<code>.contents</code>是返回他的子节点，不包括儿子节点。</p>
+<p>由于返回的是列表信息，我们可以对信息进行检索 </p>
+<p>我们看一下<code>&lt;body&gt;...&lt;/body&gt;</code>下的.contents信息</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>body<span class="token punctuation">.</span>contents
+<span class="token punctuation">[</span><span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"course"</span><span class="token operator">></span>Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span> <span class="token operator">and</span> <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">]</span>
+</code></pre>
+<p>可以看到里面有很多信息，对应body不同元素， </p>
+<p>我们注意，对于一个标签儿子节点，并不仅仅包括标签节点，还有字符串节点，<code>\n</code>也会有。</p>
+<p>我们可以查看儿子节点数量</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> len<span class="token punctuation">(</span>soup<span class="token punctuation">.</span>body<span class="token punctuation">.</span>contents<span class="token punctuation">)</span>
+<span class="token number">5</span>
+</code></pre>
+<p>5个</p>
+<p>我们还可以进行检索，</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>body<span class="token punctuation">.</span>contents<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+</code></pre>
+<p>嘿嘿<code>&lt;p&gt;...&lt;/p&gt;</code>标签。</p>
+</li>
+<li><p><code>.childrea</code></p>
+<p>当然，我们还可以用这个</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> child <span class="token keyword">in</span> soup<span class="token punctuation">.</span>body<span class="token punctuation">.</span>children<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span>
+
+    
+
+
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+
+
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"course"</span><span class="token operator">></span>Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span> <span class="token operator">and</span> <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+</code></pre>
+<p>这应该是对<code>&lt;body&gt;...&lt;/body&gt;</code>标签下儿子节点的一个遍历</p>
+<p>一直有个疑问，为什么还会有a标签，现在懂了，p标签包含a标签</p>
+</li>
+<li><p><code>.descendans</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> child2 <span class="token keyword">in</span> soup<span class="token punctuation">.</span>body<span class="token punctuation">.</span>descendants<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>child2<span class="token punctuation">)</span>
+
+    
+
+
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span>
+The demo python introduces several python courses<span class="token punctuation">.</span>
+
+
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"course"</span><span class="token operator">></span>Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span> <span class="token operator">and</span> <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+Basic Python
+ <span class="token operator">and</span> 
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+Advanced Python
+<span class="token punctuation">.</span>
+</code></pre>
+<p>一开始有点难理解，这个标签怎么会出现在这里，慢慢对照整理后的结构，有的标签时嵌套在里面的。很简单。</p>
+</li>
+</ol>
+<h2 id="4-2-标签树的上行遍历"><a href="#4-2-标签树的上行遍历" class="headerlink" title="4.2,标签树的上行遍历"></a>4.2,标签树的上行遍历</h2><p>只有两个属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.parent</td>
+<td>节点的父亲标签</td>
+</tr>
+<tr>
+<td>.parents</td>
+<td>节点先辈标签的迭代类型，用于循环遍历先辈节点</td>
+</tr>
+</tbody></table>
+<p>有木有发现parent是父母的意思。分别看一下</p>
+<ol>
+<li><p><code>.parent</code></p>
+<p>我们看一下<code>&lt;title&gt;...&lt;/title&gt;</code>标签的父亲</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>title<span class="token punctuation">.</span>parent
+<span class="token operator">&lt;</span>head<span class="token operator">></span><span class="token operator">&lt;</span>title<span class="token operator">></span>This <span class="token keyword">is</span> a python demo page<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.20mtqle4z9s0.png" alt="image"></p>
+<p>我们看一下<code>&lt;html&gt;...&lt;/html&gt;</code>标签的父亲</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>html<span class="token punctuation">.</span>parent
+<span class="token operator">&lt;</span>html<span class="token operator">></span><span class="token operator">&lt;</span>head<span class="token operator">></span><span class="token operator">&lt;</span>title<span class="token operator">></span>This <span class="token keyword">is</span> a python demo page<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&lt;</span>b<span class="token operator">></span>The demo python introduces several python courses<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>b<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"course"</span><span class="token operator">></span>Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>Basic Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span> <span class="token operator">and</span> <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span><span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
+</code></pre>
+<p>因为<code>&lt;html&gt;...&lt;/html&gt;</code>标签在HTML文本中最高级标签，所以<code>&lt;html&gt;...&lt;/html&gt;</code>标签的父亲是他自己。</p>
+<p>soup标签是一种特殊的标签，所以我们也可以进行打印</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>parent
+<span class="token operator">>></span><span class="token operator">></span> 
+</code></pre>
+<p>会发现是空的，所以没有</p>
+</li>
+<li><p><code>.parents</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> parent <span class="token keyword">in</span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>parents<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> parent <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+ 
+p
+body
+html
+<span class="token punctuation">[</span>document<span class="token punctuation">]</span>
+</code></pre>
+<p>这段代码表达什么呢？</p>
+<p>对<code>&lt;a&gt;...&lt;/a&gt;</code>标签的所有的先辈的名字进行打印。但是为什么会有<code>if--else</code>语句呢？在遍历一个标签的所有先辈标签时，会遍历到soup本身，而soup里面并没有任何信息，所以就有一个区分，先辈是<code>Name</code>不可以打印。</p>
+<p>所以，这两个方法很容易理解 </p>
+</li>
+</ol>
+<h2 id="4-3-标签树的平行遍历"><a href="#4-3-标签树的平行遍历" class="headerlink" title="4.3,标签树的平行遍历"></a>4.3,标签树的平行遍历</h2><p>一共有四个四个属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.next_sibling</td>
+<td>返回按照HTML文本顺序的下一个平行节点标签</td>
+</tr>
+<tr>
+<td>.previous_sibling</td>
+<td>返回按照HTML文本顺序的上一个平行节点标签</td>
+</tr>
+<tr>
+<td>.next_siblings</td>
+<td>迭代类型，返回按照HTML文本顺序的后续所有平行节点标签</td>
+</tr>
+<tr>
+<td>.previous_siblings</td>
+<td>迭代类型，返回按照HTML文本顺序的前续所有平行节点标签</td>
+</tr>
+</tbody></table>
+<p>其实会发现他们是成对出现的，上下，前后</p>
+<p>平行遍历还是有条件的：平行遍历发生同一个父节点的各节点间。<strong>同一父亲</strong>。</p>
+<ol>
+<li><p><code>.next_sibling</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>next_sibling
+<span class="token string">' and '</span>
+</code></pre>
+<p>a标签的平行标签是一个字符串，</p>
+<p>在标签树中，虽然树型结构采用的是标签形式来组织，但是标签之间NavigableString类型也构成了标签树的节点。也就是说任何一个节点他的平行标签他的父亲标签儿子标签可能存在NavigableString类型，所以不要直接认为我们获得平行遍历的下一个节点就是标签类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.78clvgr2b5w0.png" alt="image"></p>
+<p>所以，就很形象</p>
+<p>我们接着看看a标签的下一个平行标签的下一个平行标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>next_sibling<span class="token punctuation">.</span>next_sibling
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+</code></pre>
+</li>
+<li><p>.previous_sibling</p>
+<p>我们看一下a标签的前一个平行标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>previous_sibling
+<span class="token string">'Python is a wonderful general-purpose programming language. You can learn Python from novice to professional by tracking the following courses:\r\n'</span>
+</code></pre>
+<p>是一段文本</p>
+<p>同样，我们对a标签的前一个平行标签的前一个平行标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>previous_sibling<span class="token punctuation">.</span>previous_sibling
+<span class="token operator">>></span><span class="token operator">></span> 
+</code></pre>
+<p>返回空，</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20210606140324998.png" alt="image-20210606140324998"></p>
+<p>不难发现a前面是空的，为什么不是右边那个a呢</p>
+</li>
+<li><p><code>.next_siblings</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> sibing <span class="token keyword">in</span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>next_siblings<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>sibing<span class="token punctuation">)</span>
+
+    
+ <span class="token operator">and</span> 
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py2"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-1001870001"</span> id<span class="token operator">=</span><span class="token string">"link2"</span><span class="token operator">></span>Advanced Python<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+</code></pre>
+<p>是不是很熟悉呢。</p>
+</li>
+<li><p><code>.previous_siblings</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> sibing <span class="token keyword">in</span> soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>previous_siblings<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>sibing<span class="token punctuation">)</span>
+
+    
+Python <span class="token keyword">is</span> a wonderful general<span class="token operator">-</span>purpose programming language<span class="token punctuation">.</span> You can learn Python <span class="token keyword">from</span> novice to professional by tracking the following courses<span class="token punctuation">:</span>
+
+</code></pre>
+<p>所以就</p>
+</li>
+</ol>
+<h1 id="5-基于bs4库的HTML格式输出"><a href="#5-基于bs4库的HTML格式输出" class="headerlink" title="5,基于bs4库的HTML格式输出"></a>5,基于bs4库的HTML格式输出</h1><p>看到格式，我想到了字符串格式化，这里并不是清空的意思，如何让HTML文本更加”友好“的显示呢？</p>
+<p>“友好”二字并非是使人们方便阅读，同时还是能被程序更好的读取和分析</p>
+<h2 id="5-1-bs4库的prettify-方法"><a href="#5-1-bs4库的prettify-方法" class="headerlink" title="5.1,bs4库的prettify()方法"></a>5.1,bs4库的<code>prettify()</code>方法</h2><p>我们来看一段代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="token operator">>></span><span class="token operator">></span> soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>demo<span class="token punctuation">,</span> <span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> soup<span class="token punctuation">.</span>prettify<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.662i70chx2o0.png" alt="image"></p>
+<p>我们会发现有很多换行符，我们在打印出来。</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>prettify<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>   <img src="https://cdn.jsdelivr.net/gh/yanghuanh1314/MyPicture@master/MyBlogPicture/image.3tzpzlqvzro0.png" alt="image"></p>
+<p>这样变得更加清晰，当然，这张图并不陌生。</p>
+<p>所以</p>
+<p><code>prettify()</code>：这个方法可以为HTML文本增加换行符，时它变得更加直观，也可以对每一个标签进行相关的处理。</p>
+<p>比如我们打印soup中的<code>&lt;a&gt;...&lt;/a&gt;</code>标签</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>soup<span class="token punctuation">.</span>a<span class="token punctuation">.</span>prettify<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"py1"</span> href<span class="token operator">=</span><span class="token string">"http://www.icourse163.org/course/BIT-268001"</span> id<span class="token operator">=</span><span class="token string">"link1"</span><span class="token operator">></span>
+ Basic Python
+<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+</code></pre>
+<p> 在bs4库中有一个很重要的问题，就是编码， 在bs4库中将任何读入的HTML文件或字符串都转换成了utf-8编码。因此在做解析时，并没有什么障碍。</p>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6,总结"></a>6,总结</h1><p>还记得前一章requests库吗，将的应该是如何获取源代码，对URL进行增删改查，我们这里重点说获取源代码，有源代码后你会发现不便于阅读，所以我觉得这一章更重要的讲述对源代码怎么更好的阅读，解析器。同时还有一些操作。</p>
+<p>这就是以上内容，我的笔记。</p>
+<p>谢谢您的，如果文章有错误，欢迎你的指正；如果对您有帮助，是我的荣幸。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">欢者本欢</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/posts/f682.html">http://example.com/posts/f682.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">欢者本欢</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">Python爬虫</span>
+                                </a>
+                            
+                                <a href="/tags/Python%E6%A8%A1%E5%9D%97/">
+                                    <span class="chip bg-color">Python模块</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/f682.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python之BeautifulSoup库学习笔记">
+                        
+                        <span class="card-title">python之BeautifulSoup库学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            python之BeautifulSoup库学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">Python爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/Python%E6%A8%A1%E5%9D%97/">
+                        <span class="chip bg-color">Python模块</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/57a4.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="网络爬虫的有亦有道学习笔记">
+                        
+                        <span class="card-title">网络爬虫的有亦有道学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            网络爬虫的有亦有道学习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">Python爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6597789274"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">欢者本欢</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">26.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/yanghuanh1314" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3371479847@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3371479847" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3371479847" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/u/7023335797/home?sudaref=weibo.com&amp;reason=&amp;retcode=" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/7023335797/home?sudaref=weibo.com&amp;reason=&amp;retcode=" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
